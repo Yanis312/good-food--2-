@@ -1,0 +1,56 @@
+<div class="menu__GFood"><h2>NOTRE MENU</h2></div>
+<div class="container1">
+  <div class="Wrapper__delice">
+    <div class="delices_Wrapper">
+      <a class="first__a">Tous nos Délices Authentiques </a>
+
+      <a class="second__a">Autre délices</a>
+    </div>
+  </div>
+
+  <div class="table" style="right: 100px">
+
+    <div class="wrapper__produits">
+      <!--On affiche les produits-->
+      {{#each produits}}
+        <div class="Wrap__produit">
+
+          <div><img
+              class="image__produits"
+              src={{this.chemin_image}}
+              width="300"
+              height="400"
+            /></div>
+          <div>
+            <h3 class="nom__produits">{{this.nom}}</h3>
+
+            <p class="price__produits"><span>${{this.prix}}</span></p>
+
+            {{!--  {{#if ../user}}
+      
+      {{/if}} --}}
+            <div class="boutons__wrapper">
+
+              <form novalidate class="input-group quantity-input-group">
+                <input
+                  type="number"
+                  min="1"
+                  class=""
+                  placeholder="1"
+                  value="1"
+                />
+                <input
+                  type="submit"
+                  class="btn__AddToCart"
+                  id="{{this.id_produit}}"
+                  value="Add to Cart🛒"
+                />
+              </form>
+
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
